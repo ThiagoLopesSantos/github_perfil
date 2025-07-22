@@ -1,0 +1,44 @@
+.formContainer {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid var(--Alert);
+    border-radius: 12px;
+    background-color: var(--FormBackground);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.formContainer label {
+    font-weight: bold;
+    color: var(--corSecundaria);
+}
+
+.formContainer input {
+    padding: 20px;
+    border: 1px solid var(--corSecundaria);
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.formContainer input:focus {
+    border-color: var(--corPrincipal);
+    outline: none;
+}
+
+.formContainer button {
+    padding: 0.8rem;
+    background-color: var(--corSecundaria);
+    color: var(--Alert);
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formContainer button:hover {
+    background-color: var(--BotaoVoltar);
+}

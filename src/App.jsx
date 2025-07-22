@@ -1,31 +1,47 @@
 import { useState } from 'react';
 
-import Perfil from './components/Perfil';
 import Formulario from './components/Formulario';
+import Perfil from './components/Perfil';
 import ReposList from './components/ReposList';
 
 
 
 function App() {
-  const [formularioEstavisivel, setFormularioEstaVisivel] = useState(true);
   const [nomeUsuario, setNomeUsuario] = useState('');
+  const [mostrarFormulario, setMostraFormulario] = useState(true);
+
+  const pesquisarUsuario = (usuario) => {
+    setNomeUsuario(usuario);
+    setMostraFormulario(false);
+  };
+
+  const MostrarFormulario = () => {
+    setMostraFormulario(true);
+    setNomeUsuario('');
+  }
 
   return(
-    <>
-      <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+    <div className='container'>
+      <h1 className='logo'>Veja os seus repositórios no GitHub</h1>
 
-      {nomeUsuario.length > 4 && (
+      {mostrarFormulario ? (
+        <Formulario enviarUsuario={pesquisarUsuario} />
+      ) : (
+        <button 
+          className="botao-voltar" 
+          onClick={MostrarFormulario}
+        >
+          Pesquisar outro usuário
+        </button>
+      )}
+
+      {nomeUsuario.length > 0 && (
         <>
           <Perfil nomeUsuario={nomeUsuario} />
           <ReposList nomeUsuario={nomeUsuario} />
         </>
       )}
-      
-      {/* {formularioEstavisivel && (
-        <Formulario />
-      )} 
-      <button onClick={() => setFormularioEstaVisivel(!formularioEstavisivel) } type='button'>toggle form</button> */}
-    </>
+    </ div>
   )
 }
 

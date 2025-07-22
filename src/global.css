@@ -5,13 +5,36 @@
     font-family: sans-serif;
 }
 
+:root {
+    --corPrincipal: #7f8c8d;
+    --corSecundaria: #000;
+    --BotaoVoltar: #333;
+    --FormBackground: #f9f9f9;
+    --Alert: #ffeaa7;
+    --Erro: red;
+}
+
 .container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
 }
 
-:root {
-    --corPrincipal: #7f8c8d;
-    --corSecundaria: #000;
+.logo {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--corPrincipal);
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 321px;
+    padding: 10px 15px;
+    background-color: var(--BotaoVoltar);
+    color: var(--Alert);
+    border: none;
+    cursor: pointer;
+}
+.botao-voltar:hover {
+    background-color: var(--corSecundaria);
 }

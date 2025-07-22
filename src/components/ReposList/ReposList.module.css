@@ -24,3 +24,16 @@
     padding: 8px;
     text-decoration: none;
 }
+.itemLink:hover {
+    background-color: var(--Alert);
+    
+}
+.erro {
+    color: var(--Erro);
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    background-color: var(--Alert);
+    padding: 50px;
+    border: 2px solid var(--Erro);
+}
